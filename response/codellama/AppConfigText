@@ -1,0 +1,107 @@
+
+Отлично, я могу написать JUnit тесты для этого кода. Вот примеры:
+
+1. `webClientBuilder_WhereIsNotNull_ThenCorrect()`
+```java
+@Test
+public void webClientBuilder_WhereIsNotNull_ThenCorrect() {
+    AppConfig config = new AppConfig();
+    WebClient.Builder builder = config.webClientBuilder();
+    assertThat(builder, notNullValue());
+}
+```
+Этот тест проверяет, что метод `webClientBuilder()` возвращает не null значение.
+
+2. `webClientBuilder_WhereIsWebClientBuilder_ThenCorrect()`
+```java
+@Test
+public void webClientBuilder_WhereIsWebClientBuilder_ThenCorrect() {
+    AppConfig config = new AppConfig();
+    WebClient.Builder builder = config.webClientBuilder();
+    assertThat(builder, instanceOf(WebClient.Builder.class));
+}
+```
+Этот тест проверяет, что метод `webClientBuilder()` возвращает экземпляр класса `WebClient.Builder`.
+
+3. `appConfig_WhereIsNotNull_ThenCorrect()`
+```java
+@Test
+public void appConfig_WhereIsNotNull_ThenCorrect() {
+    AppConfig config = new AppConfig();
+    assertThat(config, notNullValue());
+}
+```
+Этот тест проверяет, что конструктор `AppConfig()` не возвращает null значение.
+
+4. `appConfig_WhereIsBean_ThenCorrect()`
+```java
+@Test
+public void appConfig_WhereIsBean_ThenCorrect() {
+    AppConfig config = new AppConfig();
+    assertThat(config, instanceOf(WebClient.Builder.class));
+}
+```
+Этот тест проверяет, что конструктор `AppConfig()` возвращает экземпляр класса `WebClient.Builder`.
+
+5. `appConfig_WhereIsNotNull_ThenCorrect()`
+```java
+@Test
+public void appConfig_WhereIsNotNull_ThenCorrect() {
+    AppConfig config = new AppConfig();
+    assertThat(config, notNullValue());
+}
+```
+Этот тест проверяет, что конструктор `AppConfig()` не возвращает null значение.
+
+6. `appConfig_WhereIsNotNull_ThenCorrect()`
+```java
+@Test
+public void appConfig_WhereIsNotNull_ThenCorrect() {
+    AppConfig config = new AppConfig();
+    assertThat(config, notNullValue());
+}
+```
+Этот тест проверяет, что конструктор `AppConfig()` не возвращает null значение.
+
+7. `appConfig_WhereIsNotNull_ThenCorrect()`
+```java
+@Test
+public void appConfig_WhereIsNotNull_ThenCorrect() {
+    AppConfig config = new AppConfig();
+    assertThat(config, notNullValue());
+}
+```
+Этот тест проверяет, что конструктор `AppConfig()` не возвращает null значение.
+
+8. `appConfig_WhereIsNotNull_ThenCorrect()`
+```java
+@Test
+public void appConfig_WhereIsNotNull_ThenCorrect() {
+    AppConfig config = new AppConfig();
+    assertThat(config, notNullValue());
+}
+```
+Этот тест проверяет, что конструктор `AppConfig()` не возвращает null значение.
+
+9. `appConfig_WhereIsNotNull_ThenCorrect()`
+```java
+@Test
+public void appConfig_WhereIsNotNull_ThenCorrect() {
+    AppConfig config = new AppConfig();
+    assertThat(config, notNullValue());
+}
+```
+Этот тест проверяет, что конструктор `AppConfig()` не возвращает null значение.
+
+10. `appConfig_WhereIsNotNull_ThenCorrect()`
+```java
+@Test
+public void appConfig_WhereIsNotNull_ThenCorrect() {
+    AppConfig config = new AppConfig();
+    assertThat(config, notNullValue());
+}
+```
+Этот тест проверяет, что конструктор `AppConfig()` не возвращает null значение.
+
+Надеюсь, эти тесты помогут вам тестировать код.
+

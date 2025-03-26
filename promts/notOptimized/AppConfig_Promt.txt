@@ -1,0 +1,26 @@
+Задача: Проанализируй следующий Java-код. Напиши на него JUnit тесты. Каждый тест должен иметь название <ИмяМетода>_Where<условие>_Then<ожидание>.
+
+Описание кода: 
+
+Код:
+
+--- Начало кода ---
+package backend.academy.bot.configuration;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.web.reactive.function.client.WebClient;
+
+@Configuration
+@EnableScheduling
+public class AppConfig {
+
+    @Bean
+    public WebClient.Builder webClientBuilder() {
+        return WebClient.builder();
+    }
+}
+
+
+--- Конец кода ---

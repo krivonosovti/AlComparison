@@ -1,0 +1,24 @@
+Задача: Проанализируй следующий Java-код. Напиши на него JUnit тесты. Каждый тест должен иметь название <ИмяМетода>_Where<условие>_Then<ожидание>.
+
+Описание кода: 
+
+Код:
+
+--- Начало кода ---
+package backend.academy.bot.command;
+
+public interface CommandHandler {
+    /**
+     * Возвращает команду, которую обрабатывает данный обработчик (например, "/start")
+     */
+    String getCommand();
+
+    /**
+     * Обработка команды для конкретного chatId
+     */
+    void handle(Long chatId, String messageText);
+}
+
+
+
+--- Конец кода ---

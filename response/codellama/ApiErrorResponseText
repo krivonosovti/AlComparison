@@ -1,0 +1,50 @@
+  Here are some JUnit tests for the `ApiErrorResponse` class:
+```java
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class ApiErrorResponseTests {
+    @Test
+    void getDescription_WhereDescriptionIsNotNull_ThenReturnsDescription() {
+        String description = "Some error message";
+        ApiErrorResponse apiErrorResponse = new ApiErrorResponse(description, null, null, null, null);
+        assertEquals(description, apiErrorResponse.getDescription());
+    }
+
+    @Test
+    void getCode_WhereCodeIsNotNull_ThenReturnsCode() {
+        String code = "ERR001";
+        ApiErrorResponse apiErrorResponse = new ApiErrorResponse(null, code, null, null, null);
+        assertEquals(code, apiErrorResponse.getCode());
+    }
+
+    @Test
+    void getExceptionName_WhereExceptionNameIsNotNull_ThenReturnsExceptionName() {
+        String exceptionName = "SomeException";
+        ApiErrorResponse apiErrorResponse = new ApiErrorResponse(null, null, exceptionName, null, null);
+        assertEquals(exceptionName, apiErrorResponse.getExceptionName());
+    }
+
+    @Test
+    void getExceptionMessage_WhereExceptionMessageIsNotNull_ThenReturnsExceptionMessage() {
+        String exceptionMessage = "Some exception message";
+        ApiErrorResponse apiErrorResponse = new ApiErrorResponse(null, null, null, exceptionMessage, null);
+        assertEquals(exceptionMessage, apiErrorResponse.getExceptionMessage());
+    }
+
+    @Test
+    void getStackTrace_WhereStackTraceIsNotNull_ThenReturnsStackTrace() {
+        List<String> stackTrace = Arrays.asList("Some", "stack", "trace");
+        ApiErrorResponse apiErrorResponse = new ApiErrorResponse(null, null, null, null, stackTrace);
+        assertEquals(stackTrace, apiErrorResponse.getStackTrace());
+    }
+}
+```
+These tests cover the following scenarios:
+
+* `getDescription_WhereDescriptionIsNotNull_ThenReturnsDescription`: Tests that the `getDescription` method returns the expected value when the description is not null.
+* `getCode_WhereCodeIsNotNull_ThenReturnsCode`: Tests that the `getCode` method returns the expected value when the code is not null.
+* `getExceptionName_WhereExceptionNameIsNotNull_ThenReturnsExceptionName`: Tests that the `getExceptionName` method returns the expected value when the exception name is not null.
+* `getExceptionMessage_WhereExceptionMessageIsNotNull_ThenReturnsExceptionMessage`: Tests that the `getExceptionMessage` method returns the expected value when the exception message is not null.
+* `getStackTrace_WhereStackTraceIsNotNull_ThenReturnsStackTrace`: Tests that the `getStackTrace` method returns the expected value when the stack trace is not null.
+

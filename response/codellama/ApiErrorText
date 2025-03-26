@@ -1,0 +1,82 @@
+
+Для тестирования класса ApiError мы можем написать следующие тесты:
+
+1. `test_ApiError_Where_DescriptionIsNotNull_Then_ExceptionIsThrown` - проверить, что исключение выбрасывается, если в конструкторе передается непустое описание ошибки.
+2. `test_ApiError_Where_CodeIsNotNull_Then_ExceptionIsThrown` - проверить, что исключение выбрасывается, если в конструкторе передается непустой код ошибки.
+3. `test_ApiError_Where_ExceptionNameIsNotNull_Then_ExceptionIsThrown` - проверить, что исключение выбрасывается, если в конструкторе передается непустое имя исключения.
+4. `test_ApiError_Where_ExceptionMessageIsNotNull_Then_ExceptionIsThrown` - проверить, что исключение выбрасывается, если в конструкторе передается непустое сообщение исключения.
+5. `test_ApiError_Where_StacktraceIsNotNull_Then_ExceptionIsThrown` - проверить, что исключение выбрасывается, если в конструкторе передается непустая трасса ошибок.
+6. `test_ApiError_Where_DescriptionIsNull_Then_ExceptionIsNotThrown` - проверить, что исключение не выбрасывается, если в конструкторе передается пустое описание ошибки.
+7. `test_ApiError_Where_CodeIsNull_Then_ExceptionIsNotThrown` - проверить, что исключение не выбрасывается, если в конструкторе передается пустой код ошибки.
+8. `test_ApiError_Where_ExceptionNameIsNull_Then_ExceptionIsNotThrown` - проверить, что исключение не выбрасывается, если в конструкторе передается пустое имя исключения.
+9. `test_ApiError_Where_ExceptionMessageIsNull_Then_ExceptionIsNotThrown` - проверить, что исключение не выбрасывается, если в конструкторе передается пустое сообщение исключения.
+10. `test_ApiError_Where_StacktraceIsNull_Then_ExceptionIsNotThrown` - проверить, что исключение не выбрасывается, если в конструкторе передается пустая трасса ошибок.
+
+Код тестов:
+```java
+import org.junit.Test;
+
+public class ApiErrorTests {
+    @Test(expected = NullPointerException.class)
+    public void test_ApiError_Where_DescriptionIsNotNull_Then_ExceptionIsThrown() {
+        String description = "Some error description";
+        new ApiError(description, null, null, null, null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void test_ApiError_Where_CodeIsNotNull_Then_ExceptionIsThrown() {
+        String code = "some_error_code";
+        new ApiError(null, code, null, null, null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void test_ApiError_Where_ExceptionNameIsNotNull_Then_ExceptionIsThrown() {
+        String exceptionName = "SomeException";
+        new ApiError(null, null, exceptionName, null, null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void test_ApiError_Where_ExceptionMessageIsNotNull_Then_ExceptionIsThrown() {
+        String exceptionMessage = "Some error message";
+        new ApiError(null, null, null, exceptionMessage, null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void test_ApiError_Where_StacktraceIsNotNull_Then_ExceptionIsThrown() {
+        List<String> stacktrace = new ArrayList<>();
+        stacktrace.add("Some error message");
+        new ApiError(null, null, null, null, stacktrace);
+    }
+
+    @Test
+    public void test_ApiError_Where_DescriptionIsNull_Then_ExceptionIsNotThrown() {
+        String description = null;
+        new ApiError(description, null, null, null, null);
+    }
+
+    @Test
+    public void test_ApiError_Where_CodeIsNull_Then_ExceptionIsNotThrown() {
+        String code = null;
+        new ApiError(null, code, null, null, null);
+    }
+
+    @Test
+    public void test_ApiError_Where_ExceptionNameIsNull_Then_ExceptionIsNotThrown() {
+        String exceptionName = null;
+        new ApiError(null, null, exceptionName, null, null);
+    }
+
+    @Test
+    public void test_ApiError_Where_ExceptionMessageIsNull_Then_ExceptionIsNotThrown() {
+        String exceptionMessage = null;
+        new ApiError(null, null, null, exceptionMessage, null);
+    }
+
+    @Test
+    public void test_ApiError_Where_StacktraceIsNull_Then_ExceptionIsNotThrown() {
+        List<String> stacktrace = null;
+        new ApiError(null, null, null, null, stacktrace);
+    }
+}
+```
+

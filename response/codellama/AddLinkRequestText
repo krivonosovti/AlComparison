@@ -1,0 +1,81 @@
+
+Код представляет собой класс `AddLinkRequest`, который используется для добавления ссылок в базу данных. В этом классе есть три поля: `link`, `tags` и `filters`. Методы класса позволяют изменять значения этих полей и получать их значения.
+
+Для написания JUnit тестов на этот класс, я бы использовал следующий подход:
+
+1. Тест для проверки работы конструктора по умолчанию:
+```java
+@Test
+public void testConstructor() {
+    AddLinkRequest request = new AddLinkRequest();
+    assertEquals(null, request.getLink());
+    assertEquals(null, request.getTags());
+    assertEquals(null, request.getFilters());
+}
+```
+2. Тест для проверки работы конструктора с параметрами:
+```java
+@Test
+public void testConstructorWithParameters() {
+    AddLinkRequest request = new AddLinkRequest("https://example.com", Arrays.asList("tag1", "tag2"), Arrays.asList("filter1", "filter2"));
+    assertEquals("https://example.com", request.getLink());
+    assertEquals(Arrays.asList("tag1", "tag2"), request.getTags());
+    assertEquals(Arrays.asList("filter1", "filter2"), request.getFilters());
+}
+```
+3. Тест для проверки метода `setLink`:
+```java
+@Test
+public void testSetLink() {
+    AddLinkRequest request = new AddLinkRequest();
+    String link = "https://example.com";
+    request.setLink(link);
+    assertEquals(link, request.getLink());
+}
+```
+4. Тест для проверки метода `setTags`:
+```java
+@Test
+public void testSetTags() {
+    AddLinkRequest request = new AddLinkRequest();
+    List<String> tags = Arrays.asList("tag1", "tag2");
+    request.setTags(tags);
+    assertEquals(tags, request.getTags());
+}
+```
+5. Тест для проверки метода `setFilters`:
+```java
+@Test
+public void testSetFilters() {
+    AddLinkRequest request = new AddLinkRequest();
+    List<String> filters = Arrays.asList("filter1", "filter2");
+    request.setFilters(filters);
+    assertEquals(filters, request.getFilters());
+}
+```
+6. Тест для проверки метода `getLink`:
+```java
+@Test
+public void testGetLink() {
+    AddLinkRequest request = new AddLinkRequest("https://example.com", null, null);
+    assertEquals("https://example.com", request.getLink());
+}
+```
+7. Тест для проверки метода `getTags`:
+```java
+@Test
+public void testGetTags() {
+    AddLinkRequest request = new AddLinkRequest(null, Arrays.asList("tag1", "tag2"), null);
+    assertEquals(Arrays.asList("tag1", "tag2"), request.getTags());
+}
+```
+8. Тест для проверки метода `getFilters`:
+```java
+@Test
+public void testGetFilters() {
+    AddLinkRequest request = new AddLinkRequest(null, null, Arrays.asList("filter1", "filter2"));
+    assertEquals(Arrays.asList("filter1", "filter2"), request.getFilters());
+}
+```
+Надеюсь, это поможет вам написать JUnit тесты на этот класс.
+

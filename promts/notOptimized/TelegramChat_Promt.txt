@@ -1,0 +1,23 @@
+Задача: Проанализируй следующий Java-код. Напиши на него JUnit тесты. Каждый тест должен иметь название <ИмяМетода>_Where<условие>_Then<ожидание>.
+
+Описание кода: 
+
+Код:
+
+--- Начало кода ---
+package backend.academy.bot.dto.telegramAPI;
+
+public class TelegramChat {
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+}
+
+
+--- Конец кода ---

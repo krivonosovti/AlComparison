@@ -1,0 +1,31 @@
+Задача: Проанализируй следующий Java-код. Напиши на него JUnit тесты. Каждый тест должен иметь название <ИмяМетода>_Where<условие>_Then<ожидание>.
+
+Описание кода: 
+
+Код:
+
+--- Начало кода ---
+package backend.academy.bot.configuration;
+
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.validation.annotation.Validated;
+
+@Validated
+@ConfigurationProperties(prefix = "app", ignoreUnknownFields = false)
+public record BotConfig(
+    @NotEmpty
+    String telegramToken,
+    @NotNull
+    ScrapperClient scrapperClient
+) {
+    public record ScrapperClient(@NotNull String api) {
+    }
+}
+
+
+
+
+
+--- Конец кода ---
